@@ -1,5 +1,8 @@
-const config = require('../config')
-const { cmd, commands } = require('../command')
+const { cmd, commands } = require('../command');
+
+const premiumGroups = []; 
+
+
 // Command to add group to the premium list
 cmd({
     pattern: "premium",
@@ -65,3 +68,7 @@ async (conn, mek, m, { from, quoted, body, q, reply }) => {
         reply("This group is not a premium group.");
     }
 });
+
+module.exports = {
+    premiumGroups
+};
